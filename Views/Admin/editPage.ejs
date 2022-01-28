@@ -1,0 +1,32 @@
+<%- include('../Includes/header.ejs') %>
+    <title>
+        <%=title_page%>
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
+
+    <body>
+        <%- include('../Includes/navigation.ejs') %>
+            <div class="edit-style">
+                <h1>EDIT PAGE</h1>
+                <form method="POST" action="/editValue" class="form-style" enctype="multipart/form-data">
+                    <label for="iname">Item Name:</label><br>
+                    <input type="text" id="iname" name="iname" value="<%=EditData.ItemNm%>"><br>
+                    <label for="icatgry">Item Category:</label><br>
+                    <select name="icatgry" id="icatgry">
+                            <option value="CategoryA">CategoryA</option>
+                            <option value="CategoryB">CategoryB</option>
+                            <option value="CategoryC">CategoryC</option>
+                          </select><br>
+                    <label for="iprice">Item Price:</label><br>
+                    <input type="text" id="iprice" name="iprice" value="<%=EditData.ItemPrice%>"><br>
+                    <label for="iimg">Item Image:</label><br>
+                    <input type="file" id="iimg" name="iimg" value="<%=EditData.ItemImg%>"><br>
+                    <label for="idesc">Item Description:</label><br>
+                    <input type="text" id="idesc" name="idesc" value="<%=EditData.ItemDesc%>"><br><br>
+                    <input type="hidden" name="mid" value="<%=EditData._id%>"><br>
+                    <input type="submit" id="butn" class="btn" value="submit">
+                </form>
+            </div>
+            <%- include('../Includes/footer.ejs') %>

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light  mynav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+
+                <%if(isAuthenticated){%>
+                    <li class="nav-item">
+                        <a class="nav-link <%= path === '/home_page' ? 'active' : '' %>" href="/home_page">Add Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/log_out"'>LogOut</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <%= path === '/itemtDet' ? 'active' : '' %>" href="/itemtDet">Item Details</a>
+                    </li>
+
+                    <%}%>
+                        <%if(!isAuthenticated){%>
+
+                            <li class="nav-item">
+                                <a class="nav-link <%= path === '/reg_page' ? 'active' : '' %>" href="/reg_page">Registration</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= path === '/log_page' ? 'active' : '' %>" href="/log_page">LogIn</a>
+                            </li>
+
+
+                            <%}%>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>

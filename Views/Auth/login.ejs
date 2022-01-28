@@ -1,0 +1,30 @@
+<%- include('../Includes/header.ejs') %>
+    <title>
+        <%=title_page%>
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
+
+    <body>
+        <%- include('../Includes/navigation.ejs') %>
+            <div class="deco">
+                <h2>Login Yourself</h2>
+                <form method="POST" action="/logValue" class="form-style">
+                    <label for="email">Email:</label><br>
+                    <input type="string" id="email" name="email" value="<% if(cookie_data.cookiedata){%> <%=cookie_data.cookiedata.emailCookie%> <%}%>"><br>
+                    <%if(errorMsg){%>
+                        <div class="errorMessage">
+                            <%=errorMsg%>
+                        </div>
+
+                        <%}%>
+                    <label for="psd">Password:</label><br>
+                    <input type="string" id="psd" name="psd" value=""><br><br>
+
+                    <label><input id="rememberme" name="checked" value="remember" type="checkbox" /> &nbsp;Remember me</label> <br> 
+
+                    <input type="submit" id="butn" class="btn" value="submit">
+                </form>
+            </div>
+            <%- include('../Includes/footer.ejs') %>

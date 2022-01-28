@@ -1,0 +1,42 @@
+<%- include('../Includes/header.ejs') %>
+    <title>
+        <%=title %>
+    </title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
+
+    <body>
+        <%- include('../Includes/navigation.ejs') %>
+            <div class="mystyle">
+                <h1 class="headtable">Product details</h1>
+                <table border="3" class="aa">
+                    <tr class="tablrow">
+                        <th colspan="2">Item-Name</th>
+                        <th colspan="2">Item-Image</th>
+                        <th>Edit-Here</th>
+                        <th>Delete-Here</th>
+
+                    </tr>
+                    <%if(data.length>0){%>
+                        <%for(let val of data){%>
+                            <tr>
+                                <td colspan="2">
+                                    <%=val.ItemNm %>
+                                </td>
+                                <td colspan="2">
+                                    <img src="../<%=val.ItemImg%>" height="100px" width="100px " />
+                                    <%=val. ItemImg %>
+                                </td>
+                                <td><a href="/edit_form/<%=val._id%>" class="btn btn-primary">Edit</a></td>
+                                <td><a href="/itemProduct/<%=val._id%>" class="btn btn-primary">Details</a></td>
+
+                            </tr>
+                            <%}%>
+                                <%}else{%>
+                                    <h1>data not found</h1>
+                                    <%}%>
+
+                </table>
+            </div>
+
+            <%- include('../Includes/footer.ejs') %>

@@ -1,0 +1,49 @@
+<%- include('../Includes/header.ejs') %>
+    <title>
+        <%=title_page%>
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
+
+    <body>
+        <%- include('../Includes/navigation.ejs') %>
+            <div class="deco">
+                <h2>ADD PRODUCT</h2>
+                <form method="POST" action="/addValue" class="form-style" enctype="multipart/form-data">
+                   <div class="form">
+                    <label>Item Name</label><br>
+                    <input type="text" id="iname" name="iname" placeholder="Enter The Iteam Name">
+                    </div>
+
+                    <div class="form">
+                    <label>Item Category</label><br>
+                    <select name="icatgry" id="icatgry">
+                        <option value="Select">....SELECT....</option>
+                        <option value="CategoryA">HP</option>
+                        <option value="CategoryB">Dell</option>
+                        <option value="CategoryC">Sony</option>
+                        <option value="CategoryC">Apple</option>
+                        <option value="CategoryC">Lenovo</option>
+                      </select><br>
+                    </div>
+
+                    <div class="form">
+                    <label>Item Price</label><br>
+                    <input type="text" id="iprice" name="iprice" placeholder="Enter The Item Price">
+                    </div>
+
+                    <div class="form">
+                    <label>Item Image</label><br>
+                    <input type="file" id="iimg" name="iimg" placeholder="Image">
+                    </div>
+
+                    <div class="form">
+                    <label>Item Description</label><br>
+                    <input type="text" id="idesc" name="idesc" placeholder="Enter The Item Description">
+                    </div><br><br>
+
+                    <input type="submit" id="butn" class="btn" value="submit">
+                </form>
+            </div>
+            <%- include('../Includes/footer.ejs') %>
